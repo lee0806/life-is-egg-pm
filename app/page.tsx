@@ -214,7 +214,7 @@ export default function Home() {
         </h1>
         <div className="hero-bottom">
           <p className="hero-intro">
-            세 프로젝트의 공식 팀 리드로서 요구사항과 우선순위를 정하고,
+            세 프로젝트의 팀 리드로서 요구사항과 우선순위를 정하고,
             <br />
             티켓·명세·회의를 통해 팀의 작업과 의존관계를 관리했습니다.
           </p>
