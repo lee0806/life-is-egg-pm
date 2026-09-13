@@ -3,6 +3,62 @@ import Image from "next/image";
 const projects = [
   {
     number: "01",
+    name: "goorm · Product Owner Intern",
+    description:
+      "공공 AI 교육 서비스의 요구사항을 제품 목표와 실행 기준으로 전환",
+    period: "2026.08.10 — 2026.11.10",
+    role: "PO 인턴 · 요구사항 분석/상세 기획 · 디자인/개발 관리",
+    evidence: "73개 요구사항 → 485개 실행 항목",
+    workflow: [
+      "원문 해석",
+      "제품 목표",
+      "Use Case",
+      "마일스톤",
+      "기능·정책 명세",
+      "디자인·개발 리뷰",
+    ],
+    cases: [
+      {
+        title: "요구사항 원문을 실행 가능한 구조로 전환",
+        category: "Requirement",
+        problem:
+          "장문 RFP에 기능·보안·성능 조건과 상호참조가 섞여 있어 제품 목표와 구현 범위를 한 번에 파악하기 어려웠습니다.",
+        solution:
+          "원문의 문구와 의도를 대조해 목적·제약·연관 조건을 해석했습니다. 원문을 보존한 채 요구사항을 ID, 14종 분류, 상위 요구사항, 협의 필요 항목으로 분해하고 배치별 재조회와 원문 대조를 진행했습니다.",
+        result:
+          "73개 상위 요구사항을 485개 세부 항목으로 구조화해 프로젝트 목표와 연결하고, 원문 오기·누락·미확정 조건을 별도로 추적했습니다.",
+        retrospective:
+          "구현과 운영이 진행 중인 프로젝트입니다. 이후에는 요구사항별 구현·QA 상태와 변경 이력을 연결해 실제 완료율까지 확인할 계획입니다.",
+      },
+      {
+        title: "Use Case와 마일스톤을 기능·정책으로 구체화",
+        category: "Product Design",
+        problem:
+          "요구사항 목록만으로는 사용자가 무엇을 왜 수행하는지, 어떤 기능을 언제까지 완성해야 하는지 팀이 동일하게 이해하기 어려웠습니다.",
+        solution:
+          "행위자·목표·선행조건·정상/예외 흐름으로 Use Case를 작성했습니다. 각 Use Case에 기능을 매핑하고 마일스톤을 설계한 뒤 기능 정의, 상세 명세서, 세부 정책서를 작성했습니다.",
+        result:
+          "요구사항→Use Case→기능→정책→마일스톤을 추적할 수 있게 만들어 기획·디자인·개발·QA가 동일한 범위와 완료 기준으로 실행하도록 했습니다.",
+        retrospective:
+          "상세 기획의 완성도뿐 아니라 변경 발생 빈도와 개발 문의 유형을 함께 기록하면 기획 품질을 더 객관적으로 검증할 수 있습니다.",
+      },
+      {
+        title: "기획 리뷰로 디자인·개발 이슈를 조기에 해결",
+        category: "Delivery",
+        problem:
+          "기획·디자인·개발 단계가 진행될수록 새로운 정책 누락과 구현 이슈가 발견되어 명세·화면·구현이 어긋날 가능성이 있었습니다.",
+        solution:
+          "AI 답변의 근거·출처·신뢰도 확인 기능과 강남구 미래인재 사업의 AI-DNA-북 큐레이션을 프로토타입으로 리뷰했습니다. 기획 누락은 즉시 수정하고 디자인·개발 중 발생한 이슈는 리뷰에서 정책과 구현 방향을 조율했습니다.",
+        result:
+          "기획 단계의 오류를 선제적으로 보완하고, 디자인·개발 과정의 쟁점을 리뷰 안에서 해결해 산출물이 같은 기준을 유지하도록 관리했습니다.",
+        retrospective:
+          "현재는 해결 사례 중심으로 관리하고 있습니다. 이후에는 리뷰에서 발견한 이슈 수, 재작업 감소, 해결 리드타임을 지표로 남길 필요가 있습니다.",
+      },
+    ],
+    stack: "Jira · Notion · Figma · Slack · GitHub · Swagger",
+  },
+  {
+    number: "02",
     name: "CodeRun",
     description:
       "브라우저에서 코드 작성·실행·채점과 라인 단위 피드백을 연결한 교육용 IDE",
@@ -56,7 +112,7 @@ const projects = [
     stack: "Linear · Notion · Swagger · MSW · Spring Boot · React · Docker",
   },
   {
-    number: "02",
+    number: "03",
     name: "MOG",
     description:
       "일정 조율부터 중간지점 추천, 영수증 정산과 모임 기록까지 연결한 모임 관리 플랫폼",
@@ -109,82 +165,28 @@ const projects = [
     ],
     stack: "Linear · Notion · Swagger · MSW · Spring Boot · React · Gemini API",
   },
-  {
-    number: "03",
-    name: "HELIOS",
-    description:
-      "CCTV 영상 데이터로 도로 파손을 탐지하고 지도에서 위험도를 확인하는 서비스",
-    period: "2025.07 — 2025.11",
-    role: "팀 리드 (2인) · 문서/일정/역할 · FE/AI",
-    evidence: "지도 초기 렌더링 85% 단축",
-    repository: "https://github.com/Helios-CCTV/Helios-web",
-    visual: {
-      src: "/project-visuals/helios-data-architecture.png",
-      alt: "HELIOS 영상 수집과 AI 학습 데이터 파이프라인 구성도",
-      caption: "데이터 수집·검증 흐름과 역할 경계를 정리한 구조",
-    },
-    cases: [
-      {
-        title: "화면별 요청과 상태 처리 기준 통일",
-        category: "Product Quality",
-        problem:
-          "컴포넌트마다 같은 데이터를 다시 요청하고 로딩·오류·성공 상태를 서로 다르게 처리해 화면 경험이 일관되지 않았습니다.",
-        solution:
-          "React Query를 도입하고 staleTime과 상태별 UI 규칙을 공통 기준으로 정리해 화면에 적용했습니다.",
-        result:
-          "중복 요청을 줄이고 데이터 요청과 화면 상태 처리 방식을 일관되게 맞췄습니다.",
-        retrospective:
-          "요청 감소량을 별도로 측정하지 않아 개선 폭을 수치로 확인하지 못했습니다. 데이터별 갱신 주기와 요청 횟수를 기준으로 정책을 재검증해야 합니다.",
-      },
-      {
-        title: "지도 탐색의 초기 대기 시간 단축",
-        category: "User Experience",
-        problem:
-          "전국 마커를 한 번에 렌더링해 지도 초기 진입에 약 2,300ms가 걸렸습니다.",
-        solution:
-          "BE 팀원에게 뷰포트 좌표 범위 조회 API를 요청하고 연동 규격을 함께 조율했습니다. 프론트에서는 줌 레벨에 따라 조회 범위를 제한했습니다.",
-        result:
-          "내부 측정에서 초기 렌더링 시간을 2,300ms에서 340ms로 줄여 85% 단축했습니다.",
-        retrospective:
-          "내부 브라우저 환경에서 측정한 결과이며 실제 사용자의 체감과 행동 변화는 확인하지 못했습니다. 이동 중 연속 요청과 지도 탐색 완료 시간을 추가로 검증해야 합니다.",
-      },
-      {
-        title: "도로 파손 탐지 모델의 데이터·품질 검증",
-        category: "AI Validation",
-        problem:
-          "원본 CCTV 이미지에는 비도로 영역이 섞여 있고 파손 유형별 데이터가 불균형해 바로 학습하기 어려웠습니다.",
-        solution:
-          "데이터 수집·전처리·13종 라벨링과 YOLOv8n 학습을 맡았습니다. 모델 결과 중 100장을 직접 검토해 탐지 결과와 실제 파손의 일치 여부를 구분했습니다.",
-        result:
-          "mAP@0.5를 58.8%에서 92%로 높였고, 100장 수동 검수에서 90% 이상 일치를 확인했습니다.",
-        retrospective:
-          "개발자가 직접 검수한 100장 표본이므로 독립적인 외부 검증은 아닙니다. 다음에는 복수 검수자와 클래스별 정밀도·재현율을 기준으로 품질을 확인해야 합니다.",
-      },
-    ],
-    stack: "Notion · Figma · React · TypeScript · React Query · Python · YOLOv8",
-  },
 ];
 
 const skills = [
   {
     label: "Product Management",
-    value: "요구사항 정의 · 범위 조정 · 우선순위 결정",
-    detail: "제약과 핵심 흐름을 기준으로 구현 범위를 합의합니다.",
+    value: "원문 해석 · 제품 목표 · Use Case · 우선순위",
+    detail: "요구사항을 사용자 목표와 구현 가능한 범위로 전환합니다.",
   },
   {
     label: "Team Operations",
-    value: "회의 운영 · 일정 관리 · 티켓 분해",
-    detail: "진행 상황과 의존관계를 팀이 함께 볼 수 있게 만듭니다.",
+    value: "마일스톤 · 기획 리뷰 · 일정/의존성 관리",
+    detail: "리뷰에서 쟁점을 해결하고 여러 직군의 실행 기준을 맞춥니다.",
   },
   {
     label: "Metrics & Validation",
-    value: "비용 비교 · 성능 측정 · 모델 검수",
-    detail: "결정에 필요한 수치를 만들고 검증 범위와 한계를 구분합니다.",
+    value: "비용 비교 · 성능 측정 · 사용자 흐름 검증",
+    detail: "수치와 시나리오로 결정의 결과와 검증 한계를 구분합니다.",
   },
   {
     label: "Collaboration Tools",
-    value: "Linear · Notion · Swagger · Figma",
-    detail: "티켓, 회의록, API 명세와 화면 기준을 연결합니다.",
+    value: "Jira · Notion · Figma · Slack · Swagger",
+    detail: "요구사항, 정책, 프로토타입, 티켓과 변경 이력을 연결합니다.",
   },
   {
     label: "Technical Background",
@@ -199,24 +201,24 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="이세현 포트폴리오 홈">이세현</a>
         <nav aria-label="주요 메뉴">
-          <a href="#work">프로젝트</a>
+          <a href="#work">경험</a>
           <a href="#about">일하는 방식</a>
           <a href="#contact">연락하기</a>
         </nav>
       </header>
 
       <section className="hero shell" id="top">
-        <p className="eyebrow">PRODUCT MANAGER</p>
+        <p className="eyebrow">PRODUCT OWNER</p>
         <h1>
-          제품의 범위를 정하고,
+          문제를 구조화하고,
           <br />
-          <em>팀의 실행을 연결합니다.</em>
+          <em>실행 가능한 기준으로 만듭니다.</em>
         </h1>
         <div className="hero-bottom">
           <p className="hero-intro">
-            세 프로젝트의 팀 리드로서 요구사항과 우선순위를 정하고,
+            사용자 문제를 요구사항과 우선순위로 구조화하고,
             <br />
-            티켓·명세·회의를 통해 팀의 작업과 의존관계를 관리했습니다.
+            기획·디자인·개발이 같은 목표로 움직이도록 연결합니다.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#work">
@@ -247,9 +249,11 @@ export default function Home() {
                     <p>{project.description}</p>
                   </div>
                   <div className="project-links">
-                    <a className="repo-link" href={project.repository} target="_blank" rel="noreferrer" aria-label={`${project.name} GitHub 저장소 열기`}>
-                      GitHub <span aria-hidden="true">↗</span>
-                    </a>
+                    {"repository" in project && project.repository ? (
+                      <a className="repo-link" href={project.repository} target="_blank" rel="noreferrer" aria-label={`${project.name} GitHub 저장소 열기`}>
+                        GitHub <span aria-hidden="true">↗</span>
+                      </a>
+                    ) : null}
                   </div>
                 </div>
 
@@ -259,10 +263,23 @@ export default function Home() {
                   <div><dt>대표 결과</dt><dd className="accent-text">{project.evidence}</dd></div>
                 </dl>
 
-                <figure className="project-visual">
-                  <Image src={project.visual.src} alt={project.visual.alt} width={1800} height={1013} sizes="(max-width: 900px) calc(100vw - 40px), 1040px" />
-                  <figcaption><span>PROJECT MAP</span>{project.visual.caption}</figcaption>
-                </figure>
+                {"workflow" in project && project.workflow ? (
+                  <div className="project-workflow" aria-label="제품 기획과 실행 흐름">
+                    <p>PRODUCT DELIVERY FLOW</p>
+                    <ol>
+                      {project.workflow.map((step, index) => (
+                        <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>
+                      ))}
+                    </ol>
+                  </div>
+                ) : null}
+
+                {"visual" in project && project.visual ? (
+                  <figure className="project-visual">
+                    <Image src={project.visual.src} alt={project.visual.alt} width={1800} height={1013} sizes="(max-width: 900px) calc(100vw - 40px), 1040px" />
+                    <figcaption><span>PROJECT MAP</span>{project.visual.caption}</figcaption>
+                  </figure>
+                ) : null}
 
                 <div className="case-list">
                   {project.cases.map((item, index) => (
@@ -297,16 +314,16 @@ export default function Home() {
         </div>
         <div className="values-list">
           <article>
-            <span>01</span><h3>근거를 만들고 합의를 이끕니다.</h3>
-            <p>비용, 기간, 기술 제약을 비교해 선택지를 제시합니다. 혼자 결론내기보다 판단 근거를 공유하고 팀의 결정으로 연결합니다.</p>
+            <span>01</span><h3>원문에서 제품의 목표를 찾습니다.</h3>
+            <p>요청을 바로 기능으로 옮기지 않습니다. 사용자의 목표와 제약, 요구사항 사이의 관계를 해석해 팀이 결정할 수 있는 기준으로 만듭니다.</p>
           </article>
           <article>
-            <span>02</span><h3>의존성을 먼저 끊습니다.</h3>
-            <p>API 명세와 MSW, 티켓의 의존관계를 이용해 한 팀의 완료를 기다리지 않고 여러 직군이 병렬로 움직이게 합니다.</p>
+            <span>02</span><h3>기획을 실행 단위까지 구체화합니다.</h3>
+            <p>Use Case, 마일스톤, 기능 명세와 정책서를 연결합니다. 정상 흐름뿐 아니라 예외와 완료 조건까지 정의해 직군 간 해석 차이를 줄입니다.</p>
           </article>
           <article>
-            <span>03</span><h3>확인하지 못한 것을 숨기지 않습니다.</h3>
-            <p>내부 테스트 결과와 실제 사용자 성과를 구분합니다. 검증하지 못한 부분은 다음에 확인할 지표와 방법까지 남깁니다.</p>
+            <span>03</span><h3>리뷰에서 문제를 닫고 다음 실행을 엽니다.</h3>
+            <p>기획 누락은 즉시 수정하고 디자인·개발 중 발견된 쟁점은 리뷰에서 정책과 구현 방향으로 정리합니다. 결과와 아직 검증하지 못한 부분도 구분합니다.</p>
           </article>
         </div>
       </section>
@@ -327,21 +344,22 @@ export default function Home() {
 
       <section className="background-section shell">
         <div className="background-block">
-          <p className="eyebrow">BACKGROUND</p><h2>경기대학교</h2>
+          <p className="eyebrow">CURRENT ROLE</p><h2>goorm</h2>
+          <p>Product Owner Intern</p><span>2026.08.10 — 2026.11.10</span>
+        </div>
+        <div className="background-block">
+          <p className="eyebrow">EDUCATION</p><h2>경기대학교</h2>
           <p>토목공학과 전공 · 컴퓨터공학과 복수전공</p><span>2026년 졸업예정 · 3.65 / 4.5</span>
         </div>
         <div className="background-block">
           <p className="eyebrow">RECOGNITION</p>
           <ul>
-            <li>2025 산학협력 캡스톤 디자인 경진대회 심화캡스톤 디자인 동상</li>
-            <li>2025 산학협력 캡스톤 디자인 경진대회 기초캡스톤 디자인 은상</li>
             <li>한국정보기술학회 우수논문상</li>
-            <li>K-디지털 챌린지: NET 챌린지 캠프 시즌 12 국가보안기술연구소 소장상</li>
-            <li>구름 × 인프런 자바 스프링 &amp; 리액트 풀스택 개발자 성장 과정 우수 수료생</li>
+            <li>K-디지털 챌린지 국가보안기술연구소 소장상</li>
+            <li>캡스톤 디자인 경진대회 은상·동상</li>
+            <li>구름 × 인프런 성장 과정 우수 수료생</li>
+            <li>SQLD · 2026.03.27</li>
           </ul>
-        </div>
-        <div className="background-block">
-          <p className="eyebrow">CERTIFICATION</p><h2>SQLD</h2><p>SQL 개발자</p><span>2026.03.27 취득</span>
         </div>
       </section>
 

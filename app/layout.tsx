@@ -17,9 +17,9 @@ export async function generateMetadata(): Promise<Metadata> {
     requestHeaders.get("x-forwarded-proto") ??
     (host.startsWith("localhost") ? "http" : "https");
   const origin = `${protocol}://${host}`;
-  const title = "이세현 | Product Manager";
+  const title = "이세현 | Product Owner";
   const description =
-    "제품의 범위를 정하고 티켓·명세·회의로 팀의 실행을 연결하는 Product Manager 이세현의 포트폴리오입니다.";
+    "사용자 문제를 요구사항과 우선순위로 구조화하고 기획·디자인·개발의 실행을 연결하는 Product Owner 이세현의 포트폴리오입니다.";
 
   return {
     title,
@@ -32,9 +32,9 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [
         {
           url: `${origin}/og.png`,
-          width: 1736,
-          height: 907,
-          alt: "제품의 범위를 정하고 팀의 실행을 연결하는 Product Manager 이세현",
+          width: 1731,
+          height: 909,
+          alt: "문제를 구조화하고 실행 가능한 기준으로 만드는 Product Owner 이세현",
         },
       ],
     },

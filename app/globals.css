@@ -317,6 +317,60 @@ a:focus-visible {
   letter-spacing: 0.1em;
 }
 
+.project-workflow {
+  margin: 0 0 48px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.project-workflow > p {
+  margin: 0 0 20px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.project-workflow ol {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-workflow li {
+  position: relative;
+  min-height: 96px;
+  padding: 16px 14px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.project-workflow li:not(:last-child)::after {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -9px;
+  color: var(--accent);
+  content: "→";
+  transform: translateY(-50%);
+}
+
+.project-workflow li span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+}
+
 .case-list {
   border-top: 1px solid var(--foreground);
 }
@@ -639,6 +693,14 @@ a:focus-visible {
     margin-bottom: 40px;
   }
 
+  .project-workflow ol {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .project-workflow li:nth-child(3)::after {
+    display: none;
+  }
+
   .about-section {
     grid-template-columns: 1fr;
     gap: 72px;
@@ -740,6 +802,22 @@ a:focus-visible {
 
   .project-visual img {
     border-radius: 10px;
+  }
+
+  .project-workflow {
+    padding: 20px;
+  }
+
+  .project-workflow ol {
+    grid-template-columns: 1fr;
+  }
+
+  .project-workflow li {
+    min-height: 0;
+  }
+
+  .project-workflow li:not(:last-child)::after {
+    display: none;
   }
 
   .project-visual figcaption {
