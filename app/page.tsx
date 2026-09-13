@@ -9,14 +9,6 @@ const projects = [
     period: "2026.08.10 — 2026.11.10",
     role: "PO 인턴 · 요구사항 분석/상세 기획 · 디자인/개발 관리",
     evidence: "73개 요구사항 → 485개 실행 항목",
-    workflow: [
-      "원문 해석",
-      "제품 목표",
-      "Use Case",
-      "마일스톤",
-      "기능·정책 명세",
-      "디자인·개발 리뷰",
-    ],
     cases: [
       {
         title: "요구사항 원문을 실행 가능한 구조로 전환",
@@ -262,17 +254,6 @@ export default function Home() {
                   <div><dt>역할</dt><dd>{project.role}</dd></div>
                   <div><dt>대표 결과</dt><dd className="accent-text">{project.evidence}</dd></div>
                 </dl>
-
-                {"workflow" in project && project.workflow ? (
-                  <div className="project-workflow" aria-label="제품 기획과 실행 흐름">
-                    <p>PRODUCT DELIVERY FLOW</p>
-                    <ol>
-                      {project.workflow.map((step, index) => (
-                        <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>
-                      ))}
-                    </ol>
-                  </div>
-                ) : null}
 
                 {"visual" in project && project.visual ? (
                   <figure className="project-visual">
