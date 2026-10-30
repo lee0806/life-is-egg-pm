@@ -45,3 +45,6 @@ The current main experience is rebuilt with original components, informed by the
 - Licensed self-hosted SUIT Variable; 24–32px custom rounded surfaces; concise home cards and detailed evidence on separate case pages.
 - Original code-native diagrams labelled as explanatory reconstructions, not actual internal UI.
 - Previous A/B routes retained as design history, not exposed in main navigation.
+
+### Screenshot policy refinement
+Project cards do not fabricate service UI or image-like diagrams. Where no verified actual public service screenshot is available, cards are text-only at natural height. Detailed decision tables and cost comparisons remain explanatory content, not screenshots. Employer internal screens are not requested or republished.

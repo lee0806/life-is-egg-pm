@@ -17,7 +17,8 @@ test("home renders current PO portfolio and four case links", async () => {
   assert.match(html, /leeseh-pm-resume\.pdf/);
   assert.match(html, /toss-portfolio/);
   assert.match(html, /요구사항/);
-  assert.match(html, /사용자가 조정할 설정/);
+  assert.match(html, /화면별 포함·제외 이유/);
+  assert.doesNotMatch(html, /class="tp-artifact tp-visual-/);
   assert.doesNotMatch(html, /public class Learning|practice\(\)|같은 화면을 보고/);
   for (const slug of ["ai-education", "ai-workspace", "coderun", "mog"]) assert.match(html, new RegExp(`href="/work/${slug}"`));
   assert.match(html, /실제 내부 화면이나 문서는 포함하지 않았습니다/);
