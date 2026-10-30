@@ -38,3 +38,10 @@ constraint. Korean service-planning portfolios are the primary editorial inputs:
 We apply the information hierarchy, not their project claims, screenshots,
 contribution percentages, branding or assets. Our private work uses explanatory
 reconstructions because internal screens are not for publication.
+
+## October 30 — concise rounded portfolio
+The current main experience is rebuilt with original components, informed by the official Toss Design System typography hierarchy and consumer UX guidance. It is NOT an official TDS implementation. No restricted TDS kit, Toss Product Sans, brand logos, or proprietary illustration assets are included.
+- References: https://tossmini-docs.toss.im/tds-mobile/foundation/typography/ , https://developers-apps-in-toss.toss.im/design/consumer-ux-guide.md , https://developers-apps-in-toss.toss.im/design/components.md
+- Licensed self-hosted SUIT Variable; 24–32px custom rounded surfaces; concise home cards and detailed evidence on separate case pages.
+- Original code-native diagrams labelled as explanatory reconstructions, not actual internal UI.
+- Previous A/B routes retained as design history, not exposed in main navigation.

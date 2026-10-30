@@ -32,3 +32,11 @@ Self-hosted unmodified Pretendard Variable v1.3.9 by Kil Hyung-jin.
 Source: https://github.com/orioncactus/pretendard/tree/v1.3.9
 Licensed under the SIL Open Font License 1.1; full license is distributed in
 `public/fonts/OFL-Pretendard.txt`. No third-party font CDN requests are made.
+
+## Comparison-preview typefaces
+
+SUIT Variable: https://github.com/sun-typeface/SUIT — SIL OFL 1.1,
+full license in public/fonts/OFL-SUIT.txt.
+Wanted Sans Variable: https://github.com/wanteddev/wanted-sans — SIL OFL 1.1,
+full license in public/fonts/OFL-WantedSans.txt.
+Both are self-hosted unmodified official WOFF2 assets for the A/B preview pages.

@@ -1,0 +1,13 @@
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { cases } from '../../../portfolio';
+import '../../preview.css';
+export const metadata = { title: 'AI 교육 서비스 · 디자인 비교', robots: { index: false, follow: false } };
+export default async function CasePreview({params}:{params:Promise<{variant:string}>}) {
+ const {variant}=await params;if(!['a','b'].includes(variant))notFound();const p=cases[0];
+ return <main className={`design-preview theme-${variant}`}><div className="preview-bar"><strong>AI 교육 서비스 · {variant.toUpperCase()}안</strong><nav><Link href="/design/a/case">A 상세</Link><Link href="/design/b/case">B 상세</Link><Link href={`/design/${variant}`}>시안 홈</Link></nav></div><div className="preview-shell preview-story">
+  <header className="preview-header"><Link href={`/design/${variant}`}>이세현 <span>Product Owner</span></Link><a href="/leeseh-pm-resume.pdf">이력서 PDF</a></header>
+  <section className="preview-story-hero"><p className="preview-eyebrow">{p.name} · 구름 PO 인턴</p><h1>{p.title.replace('\n',' ')}</h1><p>{p.summary}</p><dl><div><dt>담당</dt><dd>{p.role}</dd></div><div><dt>기간</dt><dd>{p.period}</dd></div><div><dt>단계</dt><dd>{p.stage}</dd></div></dl></section>
+  <div className="preview-story-body"><aside><p>상세 기획</p><p>사용자·관리자 기능</p><p>개발·디자인 질의 대응</p></aside><article><section><p className="preview-eyebrow">맡은 업무</p><h2>사용자 기능의 요구사항을 검토하고 상세 기획을 작성했습니다.</h2><p>{p.context}</p></section><section><p className="preview-eyebrow">답변 평가 기능</p><h2>{p.decisions[0].title}</h2><p>{p.decisions[0].text}</p><div className="preview-diagram"><div className="preview-requirements"><span>긍정 평가</span><span>부정 평가</span><span>의견 제출</span></div><div className="preview-flow"><span className="preview-node">평가 버튼</span><span className="preview-arrow">→</span><span className="preview-node">평가 선택</span><span className="preview-arrow">→</span><span className="preview-node">의견 입력·제출</span></div><p className="preview-caption">요구사항과 설계를 설명하기 위해 재구성했습니다. 실제 내부 화면이 아닙니다.</p></div></section><section><h2>{p.decisions[1].title}</h2><p>{p.decisions[1].text}</p></section><section><p className="preview-eyebrow">함께 맡은 관리자 기능</p><h2>{p.decisions[2].title}</h2><p>{p.decisions[2].text}</p></section><section><p className="preview-eyebrow">협업</p><h2>개발자·디자이너가 문의한 정책을 확인했습니다.</h2>{p.collaboration.map(c=><div className="preview-story-collab" key={c.who}><h3>{c.who}</h3><p>{c.text}</p></div>)}</section><section><p className="preview-eyebrow">작성한 내용과 진행 상태</p><h2>상세 기획을 작성하고 리뷰에 대응했습니다.</h2><ul>{p.outputs.map(o=><li key={o}>{o}</li>)}</ul><p>{p.outcome}</p><p className="preview-caption">{p.limit}</p></section></article></div><footer className="preview-footer"><Link href={`/design/${variant}`}>시안 홈으로 돌아가기 ↗</Link></footer>
+ </div></main>;
+}

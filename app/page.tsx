@@ -1,36 +1,14 @@
 import Link from "next/link";
-import { cases } from "./portfolio";
-import { DecisionEvidence } from "./components/DecisionEvidence";
-import { SiteHeader, SiteFooter } from "./components/SiteHeader";
-const proof: Record<string, { label: string; value: string }[]> = {
-  "ai-education": [{label:"담당",value:"사용자·관리자 기능 상세 기획"},{label:"산출물",value:"시나리오 · 기능 명세 · 화면 동작"},{label:"현재 단계",value:"상세 기획 작성 · 리뷰"}],
-  "ai-workspace": [{label:"담당",value:"기존 서비스 분석 · 초기 범위 선별"},{label:"산출물",value:"화면 IA · 포함/제외 이유"},{label:"현재 단계",value:"초기 MVP 범위 정리 완료"}],
-};
+import "./toss.css";
 export default function Home() {
-  return <>
-    <a className="skip-link" href="#main">본문으로 바로가기</a><SiteHeader />
-    <main id="main">
-      <section className="hero hero-editorial container">
-        <p className="hero-label">기획 포트폴리오 · 2026</p>
-        <h1>이세현<span className="hero-role">Product Owner</span></h1>
-        <p className="hero-summary">구름에서 AI 교육 서비스의 사용자·관리자 기능을 기획하고 있습니다.<br className="desktop-break" /> 요구사항을 화면과 정책으로 풀어내고,<br className="desktop-break" /> 개발자·디자이너와 구현에 필요한 기준을 맞춥니다.</p>
-        <div className="hero-actions"><a className="button" href="#work">주요 프로젝트 보기 <span aria-hidden="true">↓</span></a><a className="text-link" href="/leeseh-pm-resume.pdf" target="_blank" rel="noopener noreferrer">이력서 PDF <span aria-hidden="true">↗</span><span className="sr-only"> 새 창</span></a></div>
-        <p className="hero-meta">구름 Product Owner 인턴 <span>2026.08 ~ 현재</span></p>
-      </section>
-      <section className="selected-work" id="work" aria-labelledby="work-heading"><div className="container">
-        <div className="work-intro"><h2 id="work-heading">주요 프로젝트</h2><p>제가 맡은 범위와 그 안에서 내린 판단을 담았습니다.</p></div>
-        <div className="feature-list">{cases.slice(0, 2).map((project, index) => <article key={project.slug} className={`feature-project feature-${project.slug}`}>
-          <div className="feature-copy"><p className="project-number">0{index + 1} <span>구름 · 실무 기획</span></p><p className="project-name">{project.name}</p><h3>{project.title.replace("\n", " ")}</h3><p className="tile-summary">{project.summary}</p>
-          <dl className="project-proof">{proof[project.slug].map(row=><div key={row.label}><dt>{row.label}</dt><dd>{row.value}</dd></div>)}</dl>
-          <Link className="case-link" href={`/work/${project.slug}`} aria-label={`${project.name} 사례 읽기`}>기획 과정 자세히 보기 <span aria-hidden="true">↗</span></Link></div>
-          <div className="feature-artifact"><DecisionEvidence slug={project.slug} /></div>
-        </article>)}</div>
-        <div className="work-intro project-subheading"><h2>팀 프로젝트에서의 실행 경험</h2><p>범위를 합의하고, 명세를 맞추고, 구현 결과를 확인했습니다.</p></div>
-        <div className="compact-projects">{cases.slice(2).map((project,index)=><article className="compact-project" key={project.slug}><p className="project-number">0{index + 3} <span>6인 교육 프로젝트</span></p><p className="project-name">{project.name}</p><h3>{project.title.replace("\n", " ")}</h3><p>{project.summary}</p><p className="project-tags">{project.slug === "coderun" ? "범위 합의 · API 명세 · MSW 병렬 작업" : "비용 추정 · 응답 형식 · 동일 조건 성능 비교"}</p><Link className="case-link" href={`/work/${project.slug}`} aria-label={`${project.name} 사례 읽기`}>판단과 결과 보기 <span aria-hidden="true">↗</span></Link></article>)}</div>
-        <p className="disclosure">업무 사례는 공개 가능한 범위에서 설명했습니다. 도식은 업무 설명을 바탕으로 재구성한 예시이며, 실제 내부 화면·자료가 아닙니다.</p>
-      </div></section>
-      <section id="about" className="about-section container" aria-labelledby="about-heading"><div className="about-heading"><p className="section-kicker">소개</p><h2 id="about-heading">기획을 맡기 전에는<br />직접 개발했습니다.</h2></div><div className="about-copy"><p>6인 팀 프로젝트에서 팀 리드와 백엔드·인프라 개발을 맡았습니다. 지금은 그 경험을 바탕으로 구현 범위와 API 명세를 개발자와 구체적으로 논의하고 있습니다.</p><dl className="about-facts"><div><dt>현재</dt><dd>구름 Product Owner 인턴<br /><span>2026.08.10 ~ 현재</span></dd></div><div><dt>학력</dt><dd>경기대학교 졸업<br /><span>토목공학 전공 · 컴퓨터공학 복수전공 / 2026.08</span></dd></div><div><dt>주요 도구</dt><dd>Figma, Notion, Jira, Linear, Swagger</dd></div></dl></div></section>
-      <section className="contact-section"><div className="container"><h2>연락처</h2><a href="mailto:leeseh0806@gmail.com">leeseh0806@gmail.com</a></div></section>
-    </main><SiteFooter />
-  </>;
+return <div className="toss-portfolio"><a className="skip-link" href="#main">본문으로 바로가기</a>
+<header className="tp-shell tp-nav"><Link href="/" aria-label="이세현 포트폴리오 홈">이세현</Link><nav aria-label="주 메뉴"><a href="#work">프로젝트</a><a href="/leeseh-pm-resume.pdf" target="_blank" rel="noopener noreferrer">이력서 PDF<span className="sr-only"> 새 창</span></a></nav></header>
+<main id="main" className="tp-shell"><section className="tp-intro"><p className="tp-label">구름 · Product Owner 인턴</p><h1>이세현 <span>Product Owner</span></h1><p className="tp-shortintro">AI 교육 서비스의<br />사용자·관리자 기능을 기획합니다.</p><div className="tp-chips" aria-label="주요 업무"><span>요구사항 분석</span><span>화면·정책 기획</span><span>개발·디자인 협업</span></div></section>
+<section id="work" aria-labelledby="work-heading"><div className="tp-section-head"><h2 id="work-heading">최근 맡은 기획</h2><p>구름 · 2026.08 ~ 현재</p></div><div className="tp-project-grid">
+<article className="tp-card"><Link className="tp-card-link" href="/work/ai-education" aria-label="AI 교육 서비스 사례 읽기"><div className="tp-card-top"><span>AI 교육 서비스</span><span aria-hidden="true">↗</span></div><h3>요구사항을<br />화면과 기능 명세로</h3><p className="tp-description">답변 평가·활용, 이용 리포트와 이력 관리.<br />담당 기능의 화면 동작과 정책을 작성했습니다.</p><div className="tp-artifact tp-visual-education" aria-label="답변에서 평가 화면으로 이어지는 구성 예시"><div className="tp-chat-line"><span>AI 답변</span><span>답변 확인 후</span></div><div className="tp-feedback-pill">답변 평가하기 <span aria-hidden="true">→</span></div><div className="tp-choice-row"><span>긍정 평가</span><span>부정 평가</span><span>의견 제출</span></div></div><p className="tp-artifact-note">평가 흐름 재구성 · 실제 서비스 화면 아님</p><div className="tp-card-foot"><span>사용자·관리자 기획</span><span>상세 기획·리뷰</span></div></Link></article>
+<article className="tp-card"><Link className="tp-card-link" href="/work/ai-workspace" aria-label="AI 업무 도구 MVP 사례 읽기"><div className="tp-card-top"><span>AI 업무 도구 MVP</span><span aria-hidden="true">↗</span></div><h3>처음 제공할 기능을<br />선별하고 정리하기</h3><p className="tp-description">기존 도구를 직접 분석하고,<br />화면별 포함·제외 이유를 문서로 남겼습니다.</p><div className="tp-artifact tp-visual-workspace" aria-label="화면, 내부 동작, 코드 제거 여부를 구분한 검토 예시"><div className="tp-scope-row"><span>사용자가 조정할 설정</span><b>선별</b></div><div className="tp-scope-row"><span>필요한 내부 동작</span><b>유지</b></div><div className="tp-scope-row is-muted"><span>코드 제거 여부</span><b>추가 검토</b></div></div><p className="tp-artifact-note">MVP 검토 내용 재구성 · 초기 기획 단계</p><div className="tp-card-foot"><span>기존 서비스 분석</span><span>MVP 범위 검토</span></div></Link></article>
+</div></section>
+<section aria-labelledby="team-heading"><div className="tp-section-head"><h2 id="team-heading">팀 프로젝트</h2><p>6인 교육 프로젝트 · 팀 리드, 백엔드·인프라</p></div><div className="tp-team-grid"><article className="tp-team-card"><p className="tp-label">CodeRun · 교육용 웹 IDE</p><h3>개발 범위와<br />API 명세를 함께 맞췄습니다</h3><p>단일 파일 구조를 제안하고, 팀과 개발 범위를 합의했습니다.</p><div className="tp-metric">코드 작성 <span>→</span> 실행 <span>→</span> 채점·피드백</div><Link href="/work/coderun">협업 과정 보기 <span aria-hidden="true">→</span></Link></article><article className="tp-team-card"><p className="tp-label">MOG · 모임 관리 서비스</p><h3>예상 비용을 비교하고<br />조회 성능을 개선했습니다</h3><p>영수증 인식 방식의 비용을 팀에 공유하고, 조회 성능을 테스트했습니다.</p><div className="tp-metric">51회 <span>→</span> 1회 <small>요약 카드 조회 쿼리</small></div><p className="tp-artifact-note">50명 규모 테스트 데이터 기준 · 운영 지표 아님</p><Link href="/work/mog">비교 근거 보기 <span aria-hidden="true">→</span></Link></article></div></section>
+<section id="about" className="tp-about"><div><p className="tp-label">소개</p><h2>기획과 개발을 경험했습니다.</h2><p>교육 프로젝트에서는 팀 리드와 백엔드 개발을 맡았습니다.<br />현재는 PO 인턴으로 요구사항을 분석하고 상세 기획을 작성합니다.</p></div><a href="/leeseh-pm-resume.pdf" target="_blank" rel="noopener noreferrer">이력서 보기 <span aria-hidden="true">↗</span><span className="sr-only"> PDF 새 창</span></a></section><p className="tp-disclosure">공개 가능한 업무만 담았습니다. 실제 내부 화면이나 문서는 포함하지 않았습니다.</p>
+</main><footer className="tp-shell tp-footer"><span>이세현 · Product Owner</span><a href="mailto:leeseh0806@gmail.com">leeseh0806@gmail.com</a><small>2026.10</small></footer></div>;
 }
