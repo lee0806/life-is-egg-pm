@@ -185,3 +185,8 @@
 .toss-case .story-section, .toss-case .story-section:last-child { padding: 28px; }
 @media (min-width: 720px) { .toss-portfolio .tp-about { grid-template-columns: minmax(0,1fr) auto; } }
 @media (max-width: 640px) { .toss-case .story-section, .toss-case .story-section:last-child { padding: 24px; } }
+/* Verified original project architecture, not a reconstructed service screen. */
+.toss-portfolio .tp-architecture { margin-top: 24px; }
+.toss-portfolio .tp-architecture a { display: block; background: #fff; border: 1px solid #e5e8eb; border-radius: 16px; overflow: hidden; }
+.toss-portfolio .tp-architecture img { display: block; width: 100%; height: auto; object-fit: contain; }
+.toss-portfolio .tp-architecture figcaption { margin-top: 8px; font-size: .75rem; color: var(--tp-subtle); }

@@ -5,7 +5,7 @@ type Evidence = {
 };
 const evidence: Record<string, Evidence> = {
   "ai-education": {
-    title: "답변 평가 기능에 반영한 요구사항",
+    title: "대표 사례 · 답변 평가 요구사항을 화면으로",
     columns: [
       { label: "요구사항", title: "긍정 · 부정 · 의견", detail: "긍정·부정 평가와 의견 제출을 제공해야 했습니다." },
       { label: "화면 구성", title: "평가 버튼 하나로 진입", detail: "평가 화면을 연 뒤 평가를 선택하고 의견을 입력하도록 했습니다." },

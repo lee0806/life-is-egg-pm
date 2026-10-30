@@ -9,7 +9,7 @@ import { CostExplorer } from "../../components/CostExplorer";
 import { socialMetadata } from "../../site-metadata";
 type Props = { params: Promise<{ slug: string }> };
 const editorial: Record<string, { context: string; decisions: string; collaboration: string; supporting: string; outcome: string }> = {
-  "ai-education": { context: "답변 평가 기능을 맡았습니다", decisions: "평가 화면 구성과 기능 명세", collaboration: "개발자·디자이너의 정책 문의", supporting: "함께 맡은 관리자 기능", outcome: "담당 기능의 기획 진행 상황" },
+  "ai-education": { context: "사용자·관리자 기능의 요구사항을 상세 기획했습니다", decisions: "평가 화면 구성과 기능 명세", collaboration: "개발자·디자이너의 정책 문의", supporting: "함께 맡은 관리자 기능", outcome: "담당 기능의 기획 진행 상황" },
   "ai-workspace": { context: "기존 AI 도구의 초기 제공 범위를 검토했습니다", decisions: "화면과 설정 항목 선별", collaboration: "후속 기획에서 참고할 내용", supporting: "실제 도구와 다른 문서 내용 확인", outcome: "초기 MVP 기능 선별 완료" },
   coderun: { context: "모든 기능을 개발하기에는 일정이 부족했습니다", decisions: "개발 범위 조정과 API 명세 공유", collaboration: "팀·프론트엔드와 협의한 내용", supporting: "작업 일정과 연동 순서 관리", outcome: "코드 작성·실행·채점·피드백 구현" },
   mog: { context: "영수증 인식 방식을 선택해야 했습니다", decisions: "비용 비교와 응답 형식 결정", collaboration: "팀의 방식 선택과 API 연동", supporting: "요약 카드 조회 성능 개선", outcome: "비용 비교와 개발 결과" },
