@@ -9,3 +9,32 @@ Apple native system typography is used when available. Korean fallbacks are Appl
 Original explanatory diagrams replace product photography. They are explicitly not company screenshots. Case pages have a720px reading column and desktop table of contents. Native-app-specific haptics and sheets do not apply.
 
 QA targets: home and all four detail routes at390/768/1440px, no horizontal overflow, Korean wrapping, keyboard focus, back/forward, PDF, cost slider0/22500/45000 and reduced motion. Server HTML tests do not replace browser QA. Do not claim unrun checks passed.
+
+## October 30 editorial refinement
+
+Use self-hosted Pretendard Variable for consistent Korean typography (OFL 1.1).
+Replace the generic centered positioning statement with name, role and current
+scope. Two featured work records expose decisions, deliverables and project
+stage; two compact team projects provide implementation evidence. Replace fake
+code/mock UI imagery with accessible reconstructed decision records. These are
+explanatory artifacts, not internal source documents or released screens.
+
+Editorial references (structure studied, no site assets copied):
+- https://www.adhamdannaway.com/portfolio/creating-a-lean-design-system — show decisions alongside concrete artifacts.
+- https://brianlovin.com/ — restrained identity and work hierarchy.
+- https://www.sebastien-gabriel.com/ — keep role and period close to project context.
+
+Apple design skill remains the token and component-rule reference, not a claim
+that copying Apple branding proves portfolio quality.
+
+### Korean portfolio references prioritized in the final refinement
+
+At the user's request, Apple is an optional visual reference, not a strict style
+constraint. Korean service-planning portfolios are the primary editorial inputs:
+- https://sieunrohroh.com/ — project scope, role, challenge, collaboration and deliverables are separated.
+- https://decisive-anteater-141.notion.site/ — concise Korean role labels and explicit user/dealer/back-office scope.
+- https://axion-portfolio-one.vercel.app/projects/detail/vazoom — actual browser inspection: left-aligned Korean layout; period, assigned work, tools and team context grouped near the case overview.
+
+We apply the information hierarchy, not their project claims, screenshots,
+contribution percentages, branding or assets. Our private work uses explanatory
+reconstructions because internal screens are not for publication.
