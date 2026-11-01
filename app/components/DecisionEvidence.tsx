@@ -49,6 +49,6 @@ export function DecisionEvidence({ slug }: { slug: string }) {
     <div className="evidence-columns">{item.columns.map(column => <div className="evidence-column" key={column.label}>
       <p className="evidence-label">{column.label}</p><h3>{column.title}</h3><p>{column.detail}</p>
     </div>)}</div>
-    <p className="evidence-note">{item.note}</p>
+
   </figure>;
 }

@@ -9,13 +9,13 @@
 - `/work/ai-workspace` 기존 AI 업무 도구의 화면 단위 IA·MVP 범위 판단
 - `/work/coderun` 제한된 일정에서의 범위 조정과 API 기반 협업
 - `/work/mog` 사용량 가정에 따른 비용 비교와 테스트 조건 내 성능 검증
-- `/leeseh-pm-resume.pdf` 2026.10.30 최신 이력서
+- `/leeseh-pm-resume.pdf` 2026.11.01 최신 이력서
 
-업무 도식은 설명용 재구성입니다. 내부 화면·원문 요구사항·내부 문서 링크를 포함하지 않습니다. 비용은 당시 가정, 성능은 명시된 테스트 조건의 결과입니다.
+CodeRun·MOG 카드는 기존 프로젝트의 실제 서비스 구성도를 표시합니다. 상세 페이지의 의사결정 표는 설명용이며, 회사 내부 화면·원문 요구사항·내부 문서 링크는 포함하지 않습니다. 비용은 당시 가정, 성능은 명시된 테스트 조건의 결과입니다.
 
 ## 디자인
 
-실제 GitHub 스킬 [Apple Design System](https://github.com/rukkiecodes/claude-apple-design-system)의 토큰·컴포넌트·검수 기준을 적용했습니다. [DESIGN.md](./DESIGN.md), [라이선스](./THIRD_PARTY_NOTICES.md)를 참고하세요.
+현재 화면은 토스 디자인 시스템의 정보 위계를 참고해 직접 작성한 둥근 카드와 SUIT 글꼴을 사용합니다. 토스 UI Kit·브랜드 자산은 포함하지 않습니다. 이전 디자인 참고 기록은 [DESIGN.md](./DESIGN.md), [라이선스](./THIRD_PARTY_NOTICES.md)를 참고하세요.
 
 ## 로컬 실행과 검수
 

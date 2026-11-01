@@ -190,3 +190,10 @@
 .toss-portfolio .tp-architecture a { display: block; background: #fff; border: 1px solid #e5e8eb; border-radius: 16px; overflow: hidden; }
 .toss-portfolio .tp-architecture img { display: block; width: 100%; height: auto; object-fit: contain; }
 .toss-portfolio .tp-architecture figcaption { margin-top: 8px; font-size: .75rem; color: var(--tp-subtle); }
+/* November revision: a meaningful introduction, without repetitive fine print. */
+.toss-portfolio .tp-intro { max-width: none; padding: 36px 0 44px; }
+.toss-portfolio .tp-intro h1 { max-width: 850px; font-size: clamp(1.875rem, 3.6vw, 2.75rem); line-height: 1.4; letter-spacing: -.035em; }
+.toss-portfolio .tp-shortintro { max-width: 780px; font-size: 1.0625rem; line-height: 1.8; margin-top: 20px; }
+.toss-portfolio .tp-metric p { font-size: .9375rem; color: var(--tp-muted); font-weight: 400; margin-top: 6px; }
+.toss-portfolio .tp-architecture figcaption { font-size: .875rem; }
+@media (max-width: 640px) { .toss-portfolio .tp-intro { padding: 24px 0 32px; } .toss-portfolio .tp-shortintro br { display: none; } }

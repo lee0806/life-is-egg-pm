@@ -16,15 +16,18 @@ test("home renders current PO portfolio and four case links", async () => {
   assert.match(html, /사용자·관리자 기능을 기획/);
   assert.match(html, /leeseh-pm-resume\.pdf/);
   assert.match(html, /toss-portfolio/);
+  assert.match(html, /구체화하는 PO, 이세현입니다/);
+  assert.match(html, /50명 테스트 데이터 기준/);
+  assert.doesNotMatch(html, /운영 지표 아님|tp-disclosure|tp-artifact-note/);
   assert.match(html, /요구사항/);
   assert.match(html, /화면별 포함·제외 이유/);
   assert.doesNotMatch(html, /class="tp-artifact tp-visual-/);
   assert.match(html, /coderun-architecture\.png/);
   assert.match(html, /mog-architecture\.png/);
-  assert.match(html, /서비스 구조 · 기존 프로젝트 구성도/);
+  assert.match(html, /서비스 구성도/);
   assert.doesNotMatch(html, /public class Learning|practice\(\)|같은 화면을 보고/);
   for (const slug of ["ai-education", "ai-workspace", "coderun", "mog"]) assert.match(html, new RegExp(`href="/work/${slug}"`));
-  assert.match(html, /실제 내부 화면이나 문서는 포함하지 않았습니다/);
+
   for (const unsupported of [/73개/, /485개/, /60~80/, /2026\.11\.10/, /AI-DNA/, /figma\.com/, /app\.notion\.com/]) assert.doesNotMatch(html, unsupported);
 });
 for (const slug of ["ai-education", "ai-workspace", "coderun", "mog"]) {
@@ -33,7 +36,7 @@ for (const slug of ["ai-education", "ai-workspace", "coderun", "mog"]) {
     assert.match(html, /property="og:image" content="https:\/\/portfolio-pm\.leeseh0806\.com\/og\.png"/);
     assert.match(html, /name="twitter:card" content="summary_large_image"/);
     for (const section of ["context", "decisions", "collaboration", "outcome"]) assert.ok(html.includes(`id="${section}"`));
-    assert.match(html, /실제 내부 화면이나 문서는 포함하지 않았습니다/);
+
     assert.doesNotMatch(html, /app\.notion\.com|figma\.com|73개|485개/);
     if (slug === "mog") { assert.match(html, /22,500건/); assert.match(html, /50명 규모 테스트 데이터/); assert.match(html, /10,280ms에서 229ms/); assert.match(html, /운영비/); assert.match(html, /type="range"/); }
     if (slug === "ai-education") assert.match(html, /2026\.08\.10 ~ 현재/);
@@ -43,9 +46,9 @@ test("unknown case returns 404 with useful recovery link", async () => {
   const response = await render("/work/unknown-case"); const html = await response.text();
   assert.ok(response.status === 404 || html.includes('name="robots" content="noindex"')); assert.match(html, /프로젝트로 돌아가기/);
 });
-test("resume bytes match authoritative October 30 Library version 3", async () => {
+test("resume bytes match authoritative November 1 Library version 4", async () => {
   const bytes = await readFile(new URL("../public/leeseh-pm-resume.pdf", import.meta.url));
-  assert.equal(createHash("sha256").update(bytes).digest("hex"), "8453d5b1d22dbdd636cd85c8e3d12cb1cbf565db97ee80dbdfd766fd226a988b");
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), "0fdad1cf02d5e42781ccbcd3df643ed549948449f5cb613c39e5d3548f970f87");
 });
 test("Korean typeface is self-hosted with its OFL license", async () => {
   const bytes = await readFile(new URL("../public/fonts/SUIT-Variable.woff2", import.meta.url));

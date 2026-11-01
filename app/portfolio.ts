@@ -50,8 +50,8 @@ export const cases: CaseStudy[] = [
   },
   {
     slug: "ai-workspace",
-    name: "AI 업무 도구 MVP",
-    title: "AI 업무 도구의\nMVP 기능·화면 검토",
+    name: "AX 사업 MVP",
+    title: "AX 사업 MVP의\n기능·화면 기획",
     summary: "기존 AI 업무 도구를 직접 살펴보고 초기 버전에 필요한 화면과 설정을 선별했습니다. 각 항목의 포함·제외 이유와 추가로 검토할 내용을 문서로 남겼습니다.",
     type: "기존 서비스 분석 · MVP",
     period: "2026.08.10 ~ 현재 · 인턴 재직 기간",
