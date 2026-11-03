@@ -39,6 +39,8 @@ for (const slug of ["ai-education", "ai-workspace", "coderun", "mog"]) {
 
     assert.doesNotMatch(html, /app\.notion\.com|figma\.com|73개|485개/);
     if (slug === "mog") { assert.match(html, /22,500건/); assert.match(html, /50명 규모 테스트 데이터/); assert.match(html, /10,280ms에서 229ms/); assert.match(html, /운영비/); assert.match(html, /type="range"/); }
+    if (slug === "ai-workspace") { assert.match(html, /서비스 동작에 따른 시나리오 변경/); assert.match(html, /입력 예시와 결과 확인 항목 설계/); assert.match(html, /실제 시연 결과나 출시 이후 성과는 포함하지 않았습니다/); assert.doesNotMatch(html, /기획 명세와 서비스 동작 대조|MVP 범위 합의 및 기획 문서화/); }
+    if (slug === "ai-education") { assert.match(html, /기록 조회·보관 정책 검토/); assert.match(html, /파일 처리 정책 검토 및 디자인 협의/); assert.match(html, /관리자 기록 조회 화면 개선안 제안/); assert.match(html, /화면 지표와 알림 조건/); assert.doesNotMatch(html, /조회 기간 질의 대응 및 보관 정책 검토|파일 지원 정책 확인 및 디자인 협의/); }
     if (slug === "ai-education") { assert.match(html, /2026\.08\.10 ~ 현재/); assert.match(html, /AI 교육 서비스 기획/); assert.doesNotMatch(html, /class="case-cover/); assert.match(html, /후속 협의 항목/); assert.match(html, /저장된 평가와 제출된 의견 이력/); assert.doesNotMatch(html, /최종 승인된 정책으로 전달하지/); }
   });
 }
@@ -48,7 +50,7 @@ test("unknown case returns 404 with useful recovery link", async () => {
 });
 test("resume bytes match validated November 3 revision", async () => {
   const bytes = await readFile(new URL("../public/leeseh-pm-resume.pdf", import.meta.url));
-  assert.equal(createHash("sha256").update(bytes).digest("hex"), "e89a9e761304e42cc2678fa7c62a65201e820f5fcb879d443a933da3fa0f0711");
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), "784586138723ea3c0a92571d9b5db96e434309ef109e6505842d38b628f26647");
 });
 test("Korean typeface is self-hosted with its OFL license", async () => {
   const bytes = await readFile(new URL("../public/fonts/SUIT-Variable.woff2", import.meta.url));

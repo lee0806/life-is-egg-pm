@@ -8,8 +8,8 @@ import { CostExplorer } from "../../components/CostExplorer";
 import { socialMetadata } from "../../site-metadata";
 type Props = { params: Promise<{ slug: string }> };
 const editorial: Record<string, { context: string; decisions: string; collaboration: string; supporting: string; outcome: string }> = {
-  "ai-education": { context: "사용자·관리자 요구사항 분석", decisions: "기능 범위 및 정책 설계", collaboration: "개발·디자인 정책 협의", supporting: "조회 기간 및 데이터 보관 정책 검토", outcome: "기획 산출물 및 후속 협의" },
-  "ai-workspace": { context: "기존 서비스 분석과 MVP 요구사항 정의", decisions: "MVP 범위 및 화면 구성", collaboration: "범위 합의 및 상세 기획 연계", supporting: "기획 명세와 서비스 동작 대조", outcome: "MVP 기획 결과 및 개발 검토 항목" },
+  "ai-education": { context: "사용자·관리자 요구사항 분석", decisions: "기능 범위 및 정책 설계", collaboration: "개발·디자인 정책 협의", supporting: "기록 조회·보관 정책 검토", outcome: "기획 산출물 및 후속 협의" },
+  "ai-workspace": { context: "기존 서비스 분석과 MVP 요구사항 정의", decisions: "MVP 범위 및 화면 구성", collaboration: "범위 합의 및 상세 기획 연계", supporting: "서비스 동작에 따른 시나리오 변경", outcome: "MVP 기획 결과 및 개발 검토 항목" },
   coderun: { context: "모든 기능을 개발하기에는 일정이 부족했습니다", decisions: "개발 범위 조정과 API 명세 공유", collaboration: "팀·프론트엔드와 협의한 내용", supporting: "작업 일정과 연동 순서 관리", outcome: "코드 작성·실행·채점·피드백 구현" },
   mog: { context: "영수증 인식 방식을 선택해야 했습니다", decisions: "비용 비교와 응답 형식 결정", collaboration: "팀의 방식 선택과 API 연동", supporting: "요약 카드 조회 성능 개선", outcome: "비용 비교와 개발 결과" },
 };
@@ -26,7 +26,7 @@ export default async function CasePage({ params }: Props) {
   if (!project) notFound();
   const next = cases[(cases.indexOf(project) + 1) % cases.length];
   const copy = editorial[project.slug];
-  const primaryDecisions = project.decisions.slice(0, 2);
+  const primaryDecisions = project.slug === "ai-education" ? project.decisions.filter((_, index) => index !== 2) : project.decisions.slice(0, 2);
   const supportingDecision = project.decisions[2];
   return <div className="toss-case">
     <a className="skip-link" href="#main">본문으로 바로가기</a><SiteHeader />
@@ -37,7 +37,7 @@ export default async function CasePage({ params }: Props) {
         <section id="decisions" className="story-section"><p className="section-kicker">주요 작업</p><h2>{copy.decisions}</h2><div className="decision-list">{primaryDecisions.map((decision, index) => <div className="decision" key={decision.title}><span className="step-number" aria-hidden="true">{index + 1}</span><div><h3>{decision.title}</h3><p>{decision.text}</p></div></div>)}</div>{project.slug === "mog" && <CostExplorer />}</section>
         {supportingDecision && <section className="story-section supporting-decision" aria-labelledby="supporting-heading"><p className="section-kicker">{project.slug === "mog" ? "성능 테스트" : project.slug === "ai-education" ? "추가 담당 범위" : "추가 작업"}</p><h2 id="supporting-heading">{copy.supporting}</h2><p>{supportingDecision.text}</p></section>}
         <section id="collaboration" className="story-section"><p className="section-kicker">추가 협의</p><h2>{copy.collaboration}</h2><div className="collaboration-list">{project.collaboration.map((item) => <div key={item.who}><h3>{item.who}</h3><p>{item.text}</p></div>)}</div></section>
-        <section id="outcome" className="story-section"><p className="section-kicker">결과</p><h2>{copy.outcome}</h2><p>{project.outcome}</p><details className="next-validation"><summary>검증 범위와 다음 확인 사항</summary><p>{project.limit}</p><p>{project.next}</p></details>{project.repository && <a className="text-link" href={project.repository} target="_blank" rel="noopener noreferrer">프로젝트 코드 확인 <span aria-hidden="true">↗</span><span className="sr-only"> 새 창</span></a>}</section>
+        <section id="outcome" className="story-section"><p className="section-kicker">결과</p><h2>{copy.outcome}</h2><p>{project.outcome}</p>{(project.slug === "ai-education" || project.slug === "ai-workspace") && <><h3>주요 산출물</h3><ul className="constraint-list">{project.outputs.map((item) => <li key={item}>{item}</li>)}</ul></>}<details className="next-validation"><summary>검증 범위와 다음 확인 사항</summary><p>{project.limit}</p><p>{project.next}</p></details>{project.repository && <a className="text-link" href={project.repository} target="_blank" rel="noopener noreferrer">프로젝트 코드 확인 <span aria-hidden="true">↗</span><span className="sr-only"> 새 창</span></a>}</section>
       </div></div>
       <section className="next-case"><div className="container"><p>다음 프로젝트</p><Link href={`/work/${next.slug}`}><span>{next.name}</span><span aria-hidden="true">›</span></Link><Link className="text-link" href="/#work">모든 프로젝트 보기</Link></div></section>
     </main><SiteFooter />
