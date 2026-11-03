@@ -16,7 +16,7 @@ test("home renders current PO portfolio and four case links", async () => {
   assert.match(html, /사용자·관리자 기능을 기획/);
   assert.match(html, /leeseh-pm-resume\.pdf/);
   assert.match(html, /toss-portfolio/);
-  assert.match(html, /구체화하는 PO, 이세현입니다/);
+  assert.match(html, /수정 요청이 오면 요구사항을 다시 확인/); assert.doesNotMatch(html, /tp-chips/);
   assert.match(html, /50명 테스트 데이터 기준/);
   assert.doesNotMatch(html, /운영 지표 아님|tp-disclosure|tp-artifact-note/);
   assert.match(html, /요구사항/);
@@ -39,7 +39,7 @@ for (const slug of ["ai-education", "ai-workspace", "coderun", "mog"]) {
 
     assert.doesNotMatch(html, /app\.notion\.com|figma\.com|73개|485개/);
     if (slug === "mog") { assert.match(html, /22,500건/); assert.match(html, /50명 규모 테스트 데이터/); assert.match(html, /10,280ms에서 229ms/); assert.match(html, /운영비/); assert.match(html, /type="range"/); }
-    if (slug === "ai-education") assert.match(html, /2026\.08\.10 ~ 현재/);
+    if (slug === "ai-education") { assert.match(html, /2026\.08\.10 ~ 현재/); assert.match(html, /사용자·관리자 기능 기획/); assert.doesNotMatch(html, /class="case-cover/); assert.match(html, /후속 협의 항목/); assert.match(html, /저장된 평가와 제출된 의견 이력/); assert.doesNotMatch(html, /최종 승인된 정책으로 전달하지/); }
   });
 }
 test("unknown case returns 404 with useful recovery link", async () => {
@@ -48,7 +48,7 @@ test("unknown case returns 404 with useful recovery link", async () => {
 });
 test("resume bytes match validated November 3 revision", async () => {
   const bytes = await readFile(new URL("../public/leeseh-pm-resume.pdf", import.meta.url));
-  assert.equal(createHash("sha256").update(bytes).digest("hex"), "e777e439c04e5ccf3ac1187d6f67f9966f207ab575a183b03352c10ec148a1bc");
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), "6dc16cf314741642cdb03e6b0a6e1702a9160ac76467b68927331b507e3bf867");
 });
 test("Korean typeface is self-hosted with its OFL license", async () => {
   const bytes = await readFile(new URL("../public/fonts/SUIT-Variable.woff2", import.meta.url));
