@@ -20,7 +20,7 @@ test("home renders current PO portfolio and four case links", async () => {
   assert.match(html, /50명 테스트 데이터 기준/);
   assert.doesNotMatch(html, /운영 지표 아님|tp-disclosure|tp-artifact-note/);
   assert.match(html, /요구사항/);
-  assert.match(html, /화면별 포함·제외 이유/);
+  assert.match(html, /설정 화면을 줄이되 필요한 내부 동작/);
   assert.doesNotMatch(html, /class="tp-artifact tp-visual-/);
   assert.match(html, /coderun-architecture\.png/);
   assert.match(html, /mog-architecture\.png/);
@@ -46,9 +46,9 @@ test("unknown case returns 404 with useful recovery link", async () => {
   const response = await render("/work/unknown-case"); const html = await response.text();
   assert.ok(response.status === 404 || html.includes('name="robots" content="noindex"')); assert.match(html, /프로젝트로 돌아가기/);
 });
-test("resume bytes match authoritative November 1 Library version 4", async () => {
+test("resume bytes match validated November 3 revision", async () => {
   const bytes = await readFile(new URL("../public/leeseh-pm-resume.pdf", import.meta.url));
-  assert.equal(createHash("sha256").update(bytes).digest("hex"), "0fdad1cf02d5e42781ccbcd3df643ed549948449f5cb613c39e5d3548f970f87");
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), "e777e439c04e5ccf3ac1187d6f67f9966f207ab575a183b03352c10ec148a1bc");
 });
 test("Korean typeface is self-hosted with its OFL license", async () => {
   const bytes = await readFile(new URL("../public/fonts/SUIT-Variable.woff2", import.meta.url));
