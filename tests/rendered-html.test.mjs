@@ -13,10 +13,10 @@ test("home renders current PO portfolio and four case links", async () => {
   assert.match(html, /<html lang="ko">/i);
   assert.match(html, /이세현 \| Product Owner/);
   assert.match(html, /property="og:image" content="https:\/\/portfolio-pm\.leeseh0806\.com\/og\.png"/);
-  assert.match(html, /사용자·관리자 기능을 기획/);
+  assert.match(html, /PO 이세현입니다/);
   assert.match(html, /leeseh-pm-resume\.pdf/);
   assert.match(html, /toss-portfolio/);
-  assert.match(html, /수정 요청이 오면 요구사항을 다시 확인/); assert.doesNotMatch(html, /tp-chips/);
+  assert.match(html, /기능의 필요성과 우선순위를 판단/); assert.doesNotMatch(html, /구름 PO 인턴 이세현입니다/); assert.doesNotMatch(html, /tp-chips/);
   assert.match(html, /50명 테스트 데이터 기준/);
   assert.doesNotMatch(html, /운영 지표 아님|tp-disclosure|tp-artifact-note/);
   assert.match(html, /요구사항/);
@@ -48,7 +48,7 @@ test("unknown case returns 404 with useful recovery link", async () => {
 });
 test("resume bytes match validated November 3 revision", async () => {
   const bytes = await readFile(new URL("../public/leeseh-pm-resume.pdf", import.meta.url));
-  assert.equal(createHash("sha256").update(bytes).digest("hex"), "5b7ec62f615ef4c7bcb358afe1df49c7bd53785e1308a4b9304a41f6a6daab92");
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), "3f4c5621fe744a4ec956ea9e331c654d4508ae2fce038a1a9b6649fc005ebe30");
 });
 test("Korean typeface is self-hosted with its OFL license", async () => {
   const bytes = await readFile(new URL("../public/fonts/SUIT-Variable.woff2", import.meta.url));
