@@ -20,6 +20,8 @@ test("home renders current PO portfolio and four case links", async () => {
   assert.match(html, /50명 테스트 데이터 기준/);
   assert.doesNotMatch(html, /운영 지표 아님|tp-disclosure|tp-artifact-note/);
   assert.match(html, /요구사항/);
+  assert.match(html, /AI 채팅 실습 기획/);
+  assert.doesNotMatch(html, /답변 평가 정책과 기록 조회 기능/);
   assert.match(html, /AX 사업 MVP 기획/); assert.match(html, /MVP 기능 범위와 화면 구성을 정의/); assert.doesNotMatch(html, /MVP에 남길 화면|뒤로 미룰 기능 정하기/);
   assert.doesNotMatch(html, /class="tp-artifact tp-visual-/);
   assert.match(html, /coderun-architecture\.png/);
@@ -41,8 +43,10 @@ for (const slug of ["ai-education", "ai-workspace", "coderun", "mog"]) {
     assert.doesNotMatch(html, /검증 범위와 다음 확인 사항|최종 구현과 정책 승인|후속 검증에서는/);
     if (slug === "mog") { assert.match(html, /22,500건/); assert.match(html, /50명 규모 테스트 데이터/); assert.match(html, /10,280ms에서 229ms/); assert.match(html, /분석·측정 조건/); assert.match(html, /프로젝트 당시 요금과 예상 토큰 사용량/); assert.match(html, /type="range"/); }
     if (slug === "ai-workspace") { assert.match(html, /서비스 동작에 따른 시나리오 변경/); assert.match(html, /입력 예시와 결과 확인 항목 설계/); assert.doesNotMatch(html, /실제 시연 결과나 출시 이후 성과는 포함하지 않았습니다/); assert.doesNotMatch(html, /기획 명세와 서비스 동작 대조|MVP 범위 합의 및 기획 문서화/); }
-    if (slug === "ai-education") { assert.match(html, /기록 조회·보관 정책 검토/); assert.match(html, /파일 처리 정책 검토 및 디자인 협의/); assert.match(html, /관리자 기록 조회 화면 개선안 제안/); assert.match(html, /화면 지표와 알림 조건/); assert.doesNotMatch(html, /조회 기간 질의 대응 및 보관 정책 검토|파일 지원 정책 확인 및 디자인 협의/); }
-    if (slug === "ai-education") { assert.match(html, /2026\.08\.10 ~ 현재/); assert.match(html, /AI 교육 서비스 기획/); assert.doesNotMatch(html, /class="case-cover/); assert.match(html, /후속 협의 항목/); assert.match(html, /저장된 평가와 제출된 의견 이력/); assert.doesNotMatch(html, /최종 승인된 정책으로 전달하지/); }
+    if (slug === "ai-education") {
+      for (const copy of [/AI 채팅 실습 기획/, /대화 시작과 이어가기 흐름 설계/, /답변 근거·출처 확인 기능 기획/, /대화 검색·폴더·북마크 기능 설계/, /원문 비교와 결과물 활용 흐름 설계/, /파일 미리보기·다운로드 정책 협의/, /이용 리포트·운영 대시보드 상세 기획/, /상세 기획 작성 · 리뷰 진행/, /2026\.08\.10 ~ 현재/]) assert.match(html, copy);
+      assert.doesNotMatch(html, /답변 평가와 관리자 기록 기능|저장된 평가와 제출된 의견 이력|docs\.google\.com|app\.notion\.com/);
+    }
   });
 }
 test("unknown case returns 404 with useful recovery link", async () => {
@@ -71,6 +75,8 @@ for (const variant of ['a','b']) {
    assert.match(html,new RegExp(`theme-${variant}`));
    assert.match(html,/noindex/);
    assert.match(html,/기획/);
+   assert.match(html,/AI 채팅 실습 기획/);
+   assert.doesNotMatch(html,/답변 평가하기|평가 선택|의견 입력·제출/);
    assert.match(html,/실제.*화면.*아님|실제.*화면이 아닙니다/);
   }
  });

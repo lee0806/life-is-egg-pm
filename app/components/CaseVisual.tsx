@@ -3,10 +3,10 @@ export function CaseVisual({ slug, compact = false }: { slug: string; compact?: 
     <div className={`case-visual visual-${slug}${compact ? " is-compact" : ""}`} aria-hidden="true">
       {slug === "ai-education" && (
         <div className="education-board">
-          <div className="answer-sheet"><span className="sheet-caption">AI 답변</span><div className="text-line long" /><div className="text-line" /><div className="text-line short" /><div className="feedback-entry">답변 평가하기 <span>＋</span></div></div>
+          <div className="answer-sheet"><span className="sheet-caption">AI 답변</span><div className="text-line long" /><div className="text-line" /><div className="text-line short" /><div className="feedback-entry">출처 확인 <span>＋</span></div></div>
           <div className="flow-connector" />
-          <div className="feedback-sheet"><span className="sheet-caption">어떤 점이 도움이 되었나요?</span><div className="choice-row"><span>도움이 됐어요</span><span>아쉬워요</span></div><div className="opinion-field">의견 남기기</div><span className="mini-submit">평가 제출</span></div>
-          <p className="visual-note">하나의 진입점 · 평가와 의견을 한 흐름으로</p>
+          <div className="feedback-sheet"><span className="sheet-caption">대화와 결과물 활용</span><div className="choice-row"><span>대화 검색</span><span>북마크</span></div><div className="opinion-field">원문 비교</div><span className="mini-submit">결과물 내보내기</span></div>
+          <p className="visual-note">대화 · 근거 확인 · 결과물 활용</p>
         </div>
       )}
       {slug === "ai-workspace" && (

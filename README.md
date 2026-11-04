@@ -5,7 +5,7 @@
 ## 구성
 
 - `/` 프로젝트 소개, 일하는 방식, 경력 배경과 연락처
-- `/work/ai-education` AI 교육 서비스의 사용자 흐름·관리자 정보 우선순위 기획
+- `/work/ai-education` AI 채팅 실습의 대화·답변 근거 확인·대화 관리·결과물 활용 기획
 - `/work/ai-workspace` 기존 AI 업무 도구의 화면 단위 IA·MVP 범위 판단
 - `/work/coderun` 제한된 일정에서의 범위 조정과 API 기반 협업
 - `/work/mog` 사용량 가정에 따른 비용 비교와 테스트 조건 내 성능 검증
