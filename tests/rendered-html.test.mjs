@@ -53,9 +53,9 @@ test("unknown case returns 404 with useful recovery link", async () => {
   const response = await render("/work/unknown-case"); const html = await response.text();
   assert.ok(response.status === 404 || html.includes('name="robots" content="noindex"')); assert.match(html, /프로젝트로 돌아가기/);
 });
-test("resume bytes match validated November 3 revision", async () => {
+test("resume bytes match validated November 6 revision", async () => {
   const bytes = await readFile(new URL("../public/leeseh-pm-resume.pdf", import.meta.url));
-  assert.equal(createHash("sha256").update(bytes).digest("hex"), "e7127e3ad477c9b19faec597f580ad748247373932a2242a1eddbfcf85ca138e");
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), "f9b51c9b11ad0607325b5d876d62c89d12a6a46bfa23f52ea2dd5cb15b9408ac");
 });
 test("Korean typeface is self-hosted with its OFL license", async () => {
   const bytes = await readFile(new URL("../public/fonts/SUIT-Variable.woff2", import.meta.url));
