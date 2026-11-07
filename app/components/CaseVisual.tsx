@@ -10,7 +10,7 @@ export function CaseVisual({ slug, compact = false }: { slug: string; compact?: 
         </div>
       )}
       {slug === "ai-workspace" && (
-        <div className="scope-board"><p className="board-heading">처음 필요한 범위</p><div className="scope-row"><span className="scope-dot" /><strong>사용자 화면</strong><span>업무 요청 · 결과 확인</span></div><div className="scope-row"><span className="scope-dot" /><strong>기본 정책</strong><span>필요한 내부 동작 유지</span></div><div className="scope-row scope-muted"><span className="scope-dot" /><strong>추가 검토</strong><span>코드 의존 관계 · 제거 여부</span></div><p className="visual-note">화면에서 제외 ≠ 내부 기능 제거</p></div>
+        <div className="scope-board"><p className="board-heading">인수인계 MVP 흐름</p><div className="scope-row"><span className="scope-dot" /><strong>기존 AI 대화</strong><span>판단 배경 · 작업 맥락</span></div><div className="scope-row"><span className="scope-dot" /><strong>작업 지침</strong><span>팀원에게 기준 공유</span></div><div className="scope-row scope-muted"><span className="scope-dot" /><strong>작업 시작</strong><span>자신의 세션에서 시작</span></div><p className="visual-note">이전 대화와 지침을 바탕으로 작업 시작</p></div>
       )}
       {slug === "coderun" && (
         <div className="coderun-board"><div className="editor-top"><span>CodeRun</span><span>학습 흐름</span></div><div className="editor-body"><div className="code-lines"><span>public class Learning {'{'}</span><span>&nbsp; practice();</span><span>&nbsp; receiveFeedback();</span><span>{'}'}</span></div><div className="review-note"><span>라인별 피드백</span><div className="text-line" /><div className="text-line short" /></div></div><div className="learning-steps"><span>작성</span><i>›</i><span>실행</span><i>›</i><span>채점</span><i>›</i><span>피드백</span></div><p className="visual-note">먼저 완성할 한 번의 학습 경험</p></div>
