@@ -197,7 +197,7 @@
 .toss-portfolio .tp-architecture figcaption { font-size: .875rem; }
 @media (max-width: 640px) { .toss-portfolio .tp-intro { padding: 24px 0 32px; } .toss-portfolio .tp-shortintro br { display: none; } }
 
-/* A single blue brief makes the flagship decision readable before opening the case. */
+/* Lead with one blue card and leave the policy illustration in the case itself. */
 .toss-portfolio, .toss-case {
   --tp-blue: #1847a1;
   --tp-ink: #172337;
@@ -210,10 +210,12 @@
 .toss-portfolio .tp-intro h1 { font-weight: 800; }
 .toss-portfolio .tp-card { border: 1px solid var(--tp-line); border-radius: 20px; }
 .toss-portfolio .tp-featured { background: #dfe9ff; border-color: #c5d6fa; }
-.toss-portfolio .tp-featured .tp-card-link { gap: 20px; }
 .toss-portfolio .tp-card-copy { display: flex; flex: 1; flex-direction: column; min-width: 0; }
 .toss-portfolio .tp-featured h3 { font-size: clamp(1.5rem, 3.5vw, 2.125rem); }
-.toss-portfolio .tp-featured .tp-description { max-width: 31rem; }
+.toss-portfolio .tp-featured .tp-description { max-width: 36rem; }
+.toss-portfolio .tp-featured-cta { align-self: flex-start; margin-top: 18px; color: var(--tp-blue); font-size: .875rem; font-weight: 700; }
+.toss-portfolio .tp-featured-cta > span { margin-inline-start: .35em; }
+.toss-portfolio .tp-featured .tp-card-link:is(:hover,:focus-visible) .tp-featured-cta { text-decoration: underline; text-underline-offset: 3px; }
 .toss-portfolio .tp-card-link:hover .tp-card-top span:last-child { background: #cddfff; color: #16458f; }
 .toss-portfolio .tp-card-foot { padding-top: 18px; }
 .toss-portfolio .tp-card-foot span + span { border-inline-start: 1px solid #b9c9df; padding-inline-start: 10px; }
@@ -234,5 +236,5 @@
 @media (min-width: 720px) {
   .toss-portfolio .tp-intro { padding-top: 42px; }
   .toss-portfolio .tp-featured { grid-column: 1 / -1; }
-  .toss-portfolio .tp-featured .tp-card-link { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(230px, 1fr); gap: 34px; align-items: start; padding: 28px 30px; }
+  .toss-portfolio .tp-featured .tp-card-link { padding: 28px 30px; }
 }

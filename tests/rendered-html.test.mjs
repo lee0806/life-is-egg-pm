@@ -26,7 +26,8 @@ test("home renders current PO portfolio and five case links", async () => {
   assert.match(html, /AI 학습 서비스 운영 정책 설계/);
   assert.doesNotMatch(html, /답변 평가 정책과 기록 조회 기능/);
   assert.match(html, /AI 업무 인수인계 MVP 기획/); assert.match(html, /각자 맡은 일을 이어가는 시연을 준비/); assert.doesNotMatch(html, /MVP에 남길 화면|뒤로 미룰 기능 정하기/);
-  assert.match(html, /usage-decision-compact/);
+  assert.doesNotMatch(html, /usage-decision|동작 기준을 설명한 재구성 예시/);
+  assert.match(html, /tp-featured-cta[^>]*>사례 자세히 보기/);
   assert.ok(html.indexOf("/work/ai-education") < html.indexOf("/work/ai-workspace"));
   assert.match(html, /coderun-architecture\.png/);
   assert.match(html, /mog-architecture\.png/);
@@ -48,6 +49,7 @@ for (const slug of ["ai-education", "ai-workspace", "ai-book-experience", "coder
     if (slug === "mog") { assert.doesNotMatch(html, /교육 프로젝트/); assert.match(html, /CLOVA OCR/); assert.match(html, /Gemini/); assert.match(html, /22,500건/); assert.match(html, /50명 규모 테스트 데이터/); assert.match(html, /10,280ms에서 229ms/); assert.match(html, /분석·측정 조건/); assert.match(html, /프로젝트 당시 요금과 예상 토큰 사용량/); assert.match(html, /type="range"/); }
     if (slug === "ai-workspace") { assert.match(html, /대화와 작업 지침을 함께 전달/); assert.match(html, /자신의 세션에서/); assert.doesNotMatch(html, /연속 공동편집 대신 독립적인 문서 작성|요청 간 이전 작업 내용이 공유되지 않아/); assert.doesNotMatch(html, /실제 시연 결과나 출시 이후 성과는 포함하지 않았습니다/); assert.doesNotMatch(html, /기획 명세와 서비스 동작 대조|MVP 범위 합의 및 기획 문서화/); }
     if (slug === "ai-education") {
+      assert.match(html, /동작 기준을 설명한 재구성 예시/);
       for (const copy of [/기관 예산과 개인 한도를 따로 적용/, /기존 대화 조회/, /새로운 AI 요청/, /관리자 관제 시나리오 5개/, /관리자 3개 역할/, /통합테스트/, /기획 산출물과 검토 범위입니다/]) assert.match(html, copy);
       assert.doesNotMatch(html, /서비스를 구축했습니다|docs\.google\.com|app\.notion\.com/);
     }
