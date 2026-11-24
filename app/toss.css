@@ -1,10 +1,9 @@
 /* Personal portfolio, independently drawn UI. No third-party brand assets. */
-@font-face { font-family: "SUIT Variable"; src: url("/fonts/SUIT-Variable.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
 .toss-portfolio, .toss-case {
-  --tp-blue: #2563eb; --tp-ink: #191f28; --tp-muted: #4e5968; --tp-subtle: #657183;
+  --tp-blue: #1847a1; --tp-ink: #191f28; --tp-muted: #4e5968; --tp-subtle: #657183;
   --tp-bg: #f2f4f6; --tp-white: #fff; --tp-line: #e5e8eb;
   min-height: 100vh; background: var(--tp-bg); color: var(--tp-ink);
-  font-family: "SUIT Variable", "Pretendard", -apple-system, sans-serif;
+  font-family: "Pretendard Variable", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   font-size: 1.0625rem; line-height: 1.65; letter-spacing: -.025em; word-break: keep-all; overflow-wrap: anywhere;
 }
 :is(.toss-portfolio,.toss-case) * { box-sizing: border-box; }
@@ -197,3 +196,43 @@
 .toss-portfolio .tp-metric p { font-size: .9375rem; color: var(--tp-muted); font-weight: 400; margin-top: 6px; }
 .toss-portfolio .tp-architecture figcaption { font-size: .875rem; }
 @media (max-width: 640px) { .toss-portfolio .tp-intro { padding: 24px 0 32px; } .toss-portfolio .tp-shortintro br { display: none; } }
+
+/* A single blue brief makes the flagship decision readable before opening the case. */
+.toss-portfolio, .toss-case {
+  --tp-blue: #1847a1;
+  --tp-ink: #172337;
+  --tp-muted: #405168;
+  --tp-subtle: #50627a;
+  --tp-bg: #f4f6fa;
+  --tp-line: #dde5ee;
+}
+.toss-portfolio .tp-intro { padding-bottom: 34px; }
+.toss-portfolio .tp-intro h1 { font-weight: 800; }
+.toss-portfolio .tp-card { border: 1px solid var(--tp-line); border-radius: 20px; }
+.toss-portfolio .tp-featured { background: #dfe9ff; border-color: #c5d6fa; }
+.toss-portfolio .tp-featured .tp-card-link { gap: 20px; }
+.toss-portfolio .tp-card-copy { display: flex; flex: 1; flex-direction: column; min-width: 0; }
+.toss-portfolio .tp-featured h3 { font-size: clamp(1.5rem, 3.5vw, 2.125rem); }
+.toss-portfolio .tp-featured .tp-description { max-width: 31rem; }
+.toss-portfolio .tp-card-link:hover .tp-card-top span:last-child { background: #cddfff; color: #16458f; }
+.toss-portfolio .tp-card-foot { padding-top: 18px; }
+.toss-portfolio .tp-card-foot span + span { border-inline-start: 1px solid #b9c9df; padding-inline-start: 10px; }
+.usage-decision { min-width: 0; margin: 20px 0 0; padding: 18px 20px; border: 1px solid #c5d6fa; border-radius: 13px; color: #172337; background: #f4f7fe; }
+.usage-decision-compact { margin: 0; background: #fff; }
+.usage-decision figcaption { font-size: .8125rem; font-weight: 700; color: #405168; margin-bottom: 9px; }
+.usage-decision dl { margin: 0; }
+.usage-decision dl > div { display: flex; justify-content: space-between; align-items: center; gap: 10px; border-top: 1px solid #dde5ee; padding: 7px 0; }
+.usage-decision dt { font-size: .875rem; font-weight: 650; }
+.usage-decision dd { margin: 0; font-size: .875rem; font-weight: 760; color: #1847a1; }
+.usage-decision dl > div + div dd { color: #405168; }
+.toss-case .usage-decision p, .usage-decision p { font-size: .75rem; color: #50627a; margin: 2px 0 0; }
+.toss-case .site-header, .toss-case .site-footer { background: var(--tp-bg); }
+.toss-case .case-body { padding-top: 20px; }
+.toss-case .story-section .section-kicker { color: #1847a1; text-transform: none; letter-spacing: 0; }
+.toss-case .story-section { border: 1px solid var(--tp-line); border-radius: 18px; }
+.toss-case .supporting-decision { margin-top: 0; }
+@media (min-width: 720px) {
+  .toss-portfolio .tp-intro { padding-top: 42px; }
+  .toss-portfolio .tp-featured { grid-column: 1 / -1; }
+  .toss-portfolio .tp-featured .tp-card-link { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(230px, 1fr); gap: 34px; align-items: start; padding: 28px 30px; }
+}
