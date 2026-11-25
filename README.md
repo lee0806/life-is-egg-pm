@@ -6,7 +6,7 @@
 
 - `/` 프로젝트 소개, 일하는 방식, 경력 배경과 연락처
 - `/work/ai-education` 기관 예산·학습자 한도 구분, 관리자 관제와 통합테스트
-- `/work/ai-workspace` AI 업무 인수인계 MVP 범위와 3개 역할 시연
+- `/work/ai-workspace` AI 협업 도구 MVP 범위와 역할별 시연
 - `/work/ai-book-experience` 현장 키오스크 체험 기획과 재고·운영 예외 정리
 - `/work/coderun` 제한된 일정에서의 범위 조정과 API 기반 협업
 - `/work/mog` 사용량 가정에 따른 비용 비교와 테스트 조건 내 성능 검증

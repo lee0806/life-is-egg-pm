@@ -13,15 +13,6 @@ const evidence: Record<string, Evidence> = {
     ],
     note: "기능·정책 설계 · 개발·디자인 협의 반영",
   },
-  "ai-workspace": {
-    title: "인수인계 MVP의 사용자 흐름",
-    columns: [
-      { label: "배경", title: "기존 AI 대화 확인", detail: "앞선 판단과 작업 맥락을 파악할 수 있도록 기존 대화 공유를 기획했습니다." },
-      { label: "기준", title: "작업 지침 공유", detail: "인수인계 때마다 설명하던 작업 기준을 팀원에게 전달하는 흐름을 구성했습니다." },
-      { label: "시작", title: "자신의 세션에서 작업 시작", detail: "공유받은 팀원이 이전 맥락을 바탕으로 작업을 시작하도록 시나리오를 작성했습니다." },
-    ],
-    note: "인수인계 흐름을 중심으로 초기 MVP 기능 범위와 시나리오를 구성했습니다.",
-  },
   coderun: {
     title: "팀과 합의한 개발 범위",
     columns: [

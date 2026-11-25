@@ -10,7 +10,7 @@ import { socialMetadata } from "../../site-metadata";
 type Props = { params: Promise<{ slug: string }> };
 const editorial: Record<string, { context: string; decisions: string; collaboration: string; supporting: string; outcome: string }> = {
   "ai-education": { context: "예산이 소진되면 무엇을 막고 무엇을 남길까?", decisions: "한도에 도달했을 때 화면에서 할 수 있는 일", collaboration: "통합테스트에서 확인한 정책과 화면", supporting: "관리자 관제 상세 기획", outcome: "한도 정책 개정과 통합테스트 기준 정리" },
-  "ai-workspace": { context: "인수인계 때 결정 맥락도 전달해야 했습니다", decisions: "MVP에 남길 기능과 분리할 기능", collaboration: "시연에서 맡은 디자인 역할", supporting: "PO·디자인·개발 3개 역할의 시연", outcome: "첫 버전의 범위와 시연" },
+  "ai-workspace": { context: "첫 버전에서 검토할 범위를 정했습니다", decisions: "MVP 범위와 시연 준비", collaboration: "시연에서 맡은 디자인 역할", supporting: "PO·디자인·개발 3개 역할의 시연", outcome: "첫 버전의 범위와 시연" },
   "ai-book-experience": { context: "행사장에서 반복 사용할 체험을 기획했습니다", decisions: "행사장에서 바로 결과를 보여주는 방법", collaboration: "키오스크 운영과 리허설", supporting: "참가자 흐름과 운영자 화면", outcome: "체험 기획부터 현장 운영 지원까지" },
   coderun: { context: "모든 기능을 개발하기에는 일정이 부족했습니다", decisions: "개발 범위 조정과 API 명세 공유", collaboration: "팀·프론트엔드와 협의한 내용", supporting: "작업 일정과 연동 순서 관리", outcome: "코드 작성·실행·채점·피드백 구현" },
   mog: { context: "영수증 인식 방식을 선택해야 했습니다", decisions: "비용 비교와 응답 형식 결정", collaboration: "팀의 방식 선택과 API 연동", supporting: "요약 카드 조회 성능 개선", outcome: "비용 비교와 개발 결과" },
